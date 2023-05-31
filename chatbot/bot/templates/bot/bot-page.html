@@ -1,0 +1,25 @@
+{% extends "bot/base.html" %}
+{% block content %}
+    <div class="card border-primary">
+        <div class="card-body">
+            <h5 class='card-title mt-1'>Hi! What would you like to know about Koobits?</h5>
+            <div class="response-text bg-body-tertiary p-3 rounded-2">
+                {{ message }}
+                {{ form.errors }}
+                {{ form.non_field_errors }}
+            </div>
+            <form enctype="multipart/form-data" method='POST' class='row g-3 mt-1'>
+                {% csrf_token %}
+
+                <div class="col-auto">
+                    <!-- <input type="text" class='form-control plaintext' placeholder='Type your message here'> -->
+                    {{ form }}
+                </div>
+                <div class="col-auto">
+                    <button type='submit' class='btn btn-primary'>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="/" class="btn btn-secondary btn-sm mt-5">Return Home</a>
+{% endblock content %}

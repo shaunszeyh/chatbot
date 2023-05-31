@@ -1,0 +1,13 @@
+body {
+    background-color: #eee;
+}
+
+.card {
+    width: 400px;
+}
+
+.response-text {
+    height: 400px;
+    overflow-y: scroll;
+    line-height: 1.6;
+}
